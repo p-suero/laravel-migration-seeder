@@ -27,7 +27,7 @@ class ProductsTableSeeder extends Seeder
         for ($i=0; $i <10 ; $i++) {
             $new_product = new Product();
             $new_product->code = $faker->numberBetween($min = 1000, $max = 9000);
-            $new_product->name = $faker->shuffle('Prodotto casuale');
+            $new_product->name = $faker->randomElement($array = array ("Prodotto casuale"));
             $new_product->category = $faker->randomElement($array = array ("Alimenti","Bevande","Dolci e sfizi", "Altro"));
             $new_product->color = $faker->safeColorName;
             $new_product->price = $faker-> randomFloat($nbMaxDecimals = 2, $min = 0, $max = 6);
